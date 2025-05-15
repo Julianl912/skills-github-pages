@@ -1,4 +1,933 @@
----
-title: Welcome to my blog
----
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa Vasquense - Productos de Soja Orgánica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1603048719537-51683b2c50c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .branch-card {
+            transition: all 0.3s ease;
+        }
+        
+        .branch-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .wave-divider {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        
+        .wave-divider svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .director-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .director-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .conversion-card {
+            background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+        }
+        
+        .production-stats {
+            background: linear-gradient(135deg, #ebf8ff 0%, #ebf4ff 100%);
+        }
+        
+        .financial-stats {
+            background: linear-gradient(135deg, #faf5ff 0%, #f8f0ff 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-green-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="logo.png" alt="Logo de hoja" class="h-8 w-8">
+                <h1 class="text-2xl font-bold">Empresa <span class="text-green-300">Vasquense</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="hover:text-green-300 transition">Inicio</a>
+                <a href="#directores" class="hover:text-green-300 transition">Directores</a>
+                <a href="#productos" class="hover:text-green-300 transition">Productos</a>
+                <a href="#produccion" class="hover:text-green-300 transition">Producción</a>
+                <a href="#finanzas" class="hover:text-green-300 transition">Finanzas</a>
+                <a href="#contacto" class="hover:text-green-300 transition">Contacto</a>
+            </nav>
+            <button class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
+    <!-- Hero Section -->
+    <section id="inicio" class="hero h-screen flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Soja Orgánica <span class="text-green-300">Argentina</span></h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">2 millones de toneladas anuales · 200.000 hectáreas · 640 empleados</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#productos" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition">Nuestros Productos</a>
+                <a href="#contacto" class="bg-white hover:bg-gray-100 text-green-800 px-6 py-3 rounded-lg font-semibold transition">Contacto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider bg-green-800">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Nuestra Historia</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">Somos la familia Vasquense, una familia de pequeños productores. Nuestro proyecto nació en el año 1991 en Buenos Aires, Argentina.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Campo de soja" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Compromiso con la tierra</h3>
+                    <p class="text-gray-600 mb-4">Nuestras estancias están localizadas en Buenos Aires, Santa Fe y Córdoba. Estas zonas se caracterizan por presentar un suelo fértil y profundo, lluvias moderadas y bien distribuidas a lo largo del año.</p>
+                    <p class="text-gray-600 mb-6">La soja es un cultivo oleaginoso cuya cosecha se realiza entre los meses de Marzo y Mayo. Trabajan 640 personas, administradas por nuestro equipo de directores.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-seedling text-green-600 mr-2 text-xl"></i>
+                            <span class="text-gray-700">200.000 hectáreas</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-industry text-green-600 mr-2 text-xl"></i>
+                            <span class="text-gray-700">2M toneladas anuales</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-green-600 mr-2 text-xl"></i>
+                            <span class="text-gray-700">640 empleados</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe-americas text-green-600 mr-2 text-xl"></i>
+                            <span class="text-gray-700">Exportación global</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directors Section -->
+    <section id="directores" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Nuestro Equipo Directivo</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">El equipo que lidera nuestra empresa con visión y compromiso</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Director General -->
+                <div class="director-card bg-white rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-user-tie text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-800">Manuel Riera</h3>
+                                <p class="text-green-600">Director General</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"Somos la familia Vasquense, una familia de pequeños productores. Nuestro proyecto nació en el año 1991."</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Liderazgo</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Estrategia</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Visión</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Director Financiero -->
+                <div class="director-card bg-white rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-800">Joaquin Rousseaux</h3>
+                                <p class="text-green-600">Director Financiero</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"La familia Vasquense mantiene una estructura financiera sólida, con una rentabilidad importante basada en la exportación de productos orgánicos."</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Finanzas</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Inversión</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Rentabilidad</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Director de Producción -->
+                <div class="director-card bg-white rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-tractor text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-800">Santino Pastorino</h3>
+                                <p class="text-green-600">Director de Producción</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"Nuestra empresa es una productora líder de soja orgánica, con una capacidad anual de 2 millones de toneladas."</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Producción</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Eficiencia</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Calidad</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Director de RRHH -->
+                <div class="director-card bg-white rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-users text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-800">Santiago Herdegen</h3>
+                                <p class="text-green-600">Director de RR.HH.</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"No hay producción sin personas que se sientan valoradas. No hay innovación si no hay un entorno donde se pueda proponer sin miedo."</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Talento</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Cultura</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Desarrollo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Director de Marketing -->
+                <div class="director-card bg-white rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-bullhorn text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-800">Benicio Vera</h3>
+                                <p class="text-green-600">Director de Marketing</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"Necesitamos mostrar al mundo por qué nuestra soja es especial. No vendemos solo granos: vendemos también aceite, harina y más."</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Marca</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Comunicación</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Mercados</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Director de Logística -->
+                <div class="director-card bg-white rounded-xl overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-truck text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-green-800">Facundo Mirave</h3>
+                                <p class="text-green-600">Director de Logística</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-4">"Coordinamos transporte refrigerado para productos perecederos como tofu y leche de soja, asegurando la cadena de frío hasta destino."</p>
+                        <div class="flex space-x-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Transporte</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Distribución</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Cadena de frío</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="productos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Nuestros Productos Estrella</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">Productos derivados de soja orgánica de la más alta calidad</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Tofu -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="tofu.jpg" alt="Tofu" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Tofu Orgánico</h3>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">🥇 Más vendido</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Demanda local: Muy alta</span>
+                                <span class="text-green-600 font-medium">Margen: Alto</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Base en la dieta saludable. Ideal para retail y gastronomía. Puede destacarse con packaging premium.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-green-700 font-bold">1kg soja → 2.5kg tofu</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soy Milk -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="leche de soja.jpg" alt="Leche de soja" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Leche de Soja Orgánica</h3>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">🥈 Saludable</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Demanda local: Alta</span>
+                                <span class="text-green-600 font-medium">Margen: Medio-alto</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Buen mercado health-conscious. Etiquetado y sabor son claves para destacar en este segmento competitivo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-green-700 font-bold">1kg soja → 7.5L leche</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soy Sauce -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="salsa de soja.jpg" alt="Salsa de soja" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Salsa de Soja Orgánica</h3>
+                            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">🥉 Gourmet</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Demanda local: Alta</span>
+                                <span class="text-green-600 font-medium">Margen: Medio</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-400 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Mucha competencia asiática. Puede entrar por nicho gourmet o diferenciación artesanal.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-green-700 font-bold">1kg soja → 5L salsa</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conversion Rates -->
+            <div class="conversion-card rounded-xl p-6 mb-12">
+                <h3 class="text-xl font-bold text-green-800 mb-4 text-center">Tasas de Conversión de Soja</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-4xl font-bold text-green-600 mb-2">1kg</div>
+                        <div class="text-gray-600 mb-2">Soja Orgánica</div>
+                        <div class="text-2xl font-bold text-green-800">→</div>
+                        <div class="text-3xl font-bold text-green-600 mt-2">2.5kg</div>
+                        <div class="text-gray-600">Tofu</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-4xl font-bold text-green-600 mb-2">1kg</div>
+                        <div class="text-gray-600 mb-2">Soja Orgánica</div>
+                        <div class="text-2xl font-bold text-green-800">→</div>
+                        <div class="text-3xl font-bold text-green-600 mt-2">7.5L</div>
+                        <div class="text-gray-600">Leche de Soja</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow text-center">
+                        <div class="text-4xl font-bold text-green-600 mb-2">1kg</div>
+                        <div class="text-gray-600 mb-2">Soja Orgánica</div>
+                        <div class="text-2xl font-bold text-green-800">→</div>
+                        <div class="text-3xl font-bold text-green-600 mt-2">5L</div>
+                        <div class="text-gray-600">Salsa de Soja</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="inline-block border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition">Ver todos los productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Section -->
+    <section id="produccion" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Nuestra Producción</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">2 millones de toneladas anuales de soja orgánica</p>
+            </div>
+            
+            <div class="production-stats rounded-xl p-6 mb-8">
+                <h3 class="text-xl font-bold text-green-800 mb-4">Distribución de Producción</h3>
+                <p class="text-gray-600 mb-6">Nuestra producción total de 2 millones de toneladas se divide en partes iguales entre los tres productos principales:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="text-3xl font-bold text-green-600 mb-2">666,667</div>
+                        <div class="text-gray-600 mb-2">Toneladas de soja asignadas</div>
+                        <div class="text-xl font-bold text-green-800">→</div>
+                        <div class="text-2xl font-bold text-green-600 mt-2">1,666,667</div>
+                        <div class="text-gray-600">kg de Tofu producidos</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="text-3xl font-bold text-green-600 mb-2">666,667</div>
+                        <div class="text-gray-600 mb-2">Toneladas de soja asignadas</div>
+                        <div class="text-xl font-bold text-green-800">→</div>
+                        <div class="text-2xl font-bold text-green-600 mt-2">5,000,002</div>
+                        <div class="text-gray-600">litros de Leche de Soja</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="text-3xl font-bold text-green-600 mb-2">666,667</div>
+                        <div class="text-gray-600 mb-2">Toneladas de soja asignadas</div>
+                        <div class="text-xl font-bold text-green-800">→</div>
+                        <div class="text-2xl font-bold text-green-600 mt-2">3,333,335</div>
+                        <div class="text-gray-600">litros de Salsa de Soja</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Production Analysis -->
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h3 class="text-xl font-bold text-green-800 mb-4">Análisis de Productos</h3>
+                    
+                    <!-- Tofu -->
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-gray-800">Tofu Orgánico</h4>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Alta rentabilidad</span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><span class="font-semibold">Ventajas:</span> Demanda muy alta, margen esperado alto, fácil entrada al mercado, ideal para retail y gastronomía.</p>
+                        <p class="text-gray-600"><span class="font-semibold">Desafíos:</span> Competencia moderada pero creciente, necesidad de inversión en marketing y packaging premium.</p>
+                    </div>
+                    
+                    <!-- Leche de Soja -->
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-gray-800">Leche de Soja Orgánica</h4>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Mercado en crecimiento</span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><span class="font-semibold">Ventajas:</span> Mercado health-conscious en crecimiento, valor percibido alto, facilidad de entrada media-alta.</p>
+                        <p class="text-gray-600"><span class="font-semibold">Desafíos:</span> Competencia alta, importancia del etiquetado y sabor.</p>
+                    </div>
+                    
+                    <!-- Salsa de Soja -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-gray-800">Salsa de Soja Orgánica</h4>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Nicho gourmet</span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><span class="font-semibold">Ventajas:</span> Demanda alta, nicho gourmet disponible, valor percibido medio-alto.</p>
+                        <p class="text-gray-600"><span class="font-semibold">Desafíos:</span> Competencia muy alta (principalmente asiática), necesidad de diferenciación artesanal o gourmet.</p>
+                    </div>
+                </div>
+                
+                <!-- Logistics -->
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h3 class="text-xl font-bold text-green-800 mb-4">Logística y Transporte</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Transporte refrigerado</h4>
+                        <p class="text-gray-600 mb-2">Para productos perecederos (tofu y leche de soja) que deben mantenerse entre 2°C y 5°C:</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Camiones refrigerados (ThermoKing o similares)</li>
+                            <li>Contenedores refrigerados ("reefers") para exportación</li>
+                            <li>Cámaras frigoríficas en plantas de procesamiento</li>
+                            <li>Generadores de respaldo y monitoreo con sensores</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Rutas principales</h4>
+                        <p class="text-gray-600 mb-2">Conectando nuestras estancias con puertos y centros de distribución:</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li><span class="font-semibold">Buenos Aires:</span> Autopista Panamericana o Ruta Nacional 9</li>
+                            <li><span class="font-semibold">Santa Fe:</span> Ruta Nacional 11 o 19 hasta la 9</li>
+                            <li><span class="font-semibold">Córdoba:</span> Ruta Nacional 9 o Autopista Córdoba-Rosario</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Coordinación logística</h4>
+                        <p class="text-gray-600">Tiempos de carga/descarga, rutas seguras, horarios de exportación, gestión de stock en frío y documentación.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Section -->
+    <section id="finanzas" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Análisis Financiero</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">Estructura financiera sólida con márgenes saludables</p>
+            </div>
+            
+            <div class="financial-stats rounded-xl p-6 mb-8">
+                <h3 class="text-xl font-bold text-green-800 mb-4">Ingresos Anuales Estimados (Exportación a Singapur)</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                        <thead class="bg-green-700 text-white">
+                            <tr>
+                                <th class="py-3 px-4 text-left">Producto</th>
+                                <th class="py-3 px-4 text-right">Producción</th>
+                                <th class="py-3 px-4 text-right">Precio</th>
+                                <th class="py-3 px-4 text-right">Ingreso</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="py-3 px-4">Salsa de Soja</td>
+                                <td class="py-3 px-4 text-right">200,000,000 litros</td>
+                                <td class="py-3 px-4 text-right">USD 3.5/litro</td>
+                                <td class="py-3 px-4 text-right font-semibold">USD 700,000,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4">Leche de Soja</td>
+                                <td class="py-3 px-4 text-right">150,000,000 litros</td>
+                                <td class="py-3 px-4 text-right">USD 2.8/litro</td>
+                                <td class="py-3 px-4 text-right font-semibold">USD 420,000,000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4">Tofu</td>
+                                <td class="py-3 px-4 text-right">500,000,000 kg</td>
+                                <td class="py-3 px-4 text-right">USD 3.8/kg</td>
+                                <td class="py-3 px-4 text-right font-semibold">USD 1,900,000,000</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="py-3 px-4 font-bold">Total</td>
+                                <td class="py-3 px-4"></td>
+                                <td class="py-3 px-4"></td>
+                                <td class="py-3 px-4 text-right font-bold text-green-700">USD 3,020,000,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-green-50 p-4 rounded-lg shadow">
+                    <div class="text-3xl font-bold text-green-700 mb-2">USD 3.02B</div>
+                    <div class="text-gray-600">Ingresos totales anuales estimados</div>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg shadow">
+                    <div class="text-3xl font-bold text-green-700 mb-2">USD 2.1B</div>
+                    <div class="text-gray-600">Costos operativos estimados (70%)</div>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg shadow">
+                    <div class="text-3xl font-bold text-green-700 mb-2">USD 920M</div>
+                    <div class="text-gray-600">Ganancia neta estimada</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h3 class="text-xl font-bold text-green-800 mb-4">Estructura Financiera Actual</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Liquidez en bancos (dinero disponible): <span class="font-semibold">USD 10.1M</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Activos totales estimados: <span class="font-semibold">USD 29.75M</span> (tierras, maquinaria, infraestructura)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Deuda baja en comparación con activos</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Estabilidad financiera a largo plazo</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h3 class="text-xl font-bold text-green-800 mb-4">Mercados de Exportación</h3>
+                    <p class="text-gray-600 mb-4">Argentina exporta soja y sus derivados a numerosos países:</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-green-500 mt-1 mr-2 text-sm"></i>
+                            <span><span class="font-semibold">China:</span> Principal comprador de porotos de soja</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-green-500 mt-1 mr-2 text-sm"></i>
+                            <span><span class="font-semibold">India:</span> Importa gran parte del aceite de soja argentino</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-green-500 mt-1 mr-2 text-sm"></i>
+                            <span><span class="font-semibold">Unión Europea:</span> Países Bajos, España y Alemania para harina de soja</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-green-500 mt-1 mr-2 text-sm"></i>
+                            <span><span class="font-semibold">Sudeste Asiático:</span> Vietnam, Indonesia y Tailandia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Directors -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Directores Regionales</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">Liderando nuestras operaciones en las principales regiones productoras</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Córdoba -->
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marked-alt text-green-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-green-800">Julián Iacaruso</h3>
+                            <p class="text-green-600">Director de Córdoba</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4">"Como Director de la Estancia en Córdoba, tengo la responsabilidad de liderar y supervisar todas las operaciones agrícolas de la zona, asegurando un funcionamiento eficiente y alineado con la estrategia general."</p>
+                    
+                    <h4 class="font-semibold text-gray-800 mb-2">Responsabilidades clave:</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Gestión operativa de cultivos y logística interna</li>
+                        <li>Planificación de siembra/cosecha y presupuestos</li>
+                        <li>Seguimiento de indicadores clave (rendimiento, costos, calidad)</li>
+                        <li>Relación con casa matriz en Buenos Aires</li>
+                        <li>Gestión del equipo humano (operarios, técnicos)</li>
+                    </ul>
+                    
+                    <div class="mt-4">
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-2 mb-2">400-500m sobre nivel del mar</span>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-2 mb-2">Ruta Nacional 9</span>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-2 mb-2">Autopista Córdoba-Rosario</span>
+                    </div>
+                </div>
+                
+                <!-- Santa Fe -->
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marked-alt text-green-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-green-800">Felipe Marmolejo</h3>
+                            <p class="text-green-600">Director de Santa Fe</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4">"Como Director de la Estancia en Santa Fe, mi rol es liderar y supervisar la operación agrícola local, garantizando eficiencia, productividad y alineación con los objetivos generales de la compañía."</p>
+                    
+                    <h4 class="font-semibold text-gray-800 mb-2">Responsabilidades clave:</h4>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Supervisión de cultivos, maquinaria y recursos humanos</li>
+                        <li>Establecimiento de planes de siembra/cosecha anuales</li>
+                        <li>Monitoreo de rendimiento por hectárea y márgenes brutos</li>
+                        <li>Envío de reportes periódicos a casa matriz</li>
+                        <li>Coordinación de tareas con encargados de campo</li>
+                    </ul>
+                    
+                    <div class="mt-4">
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-2 mb-2">Zona núcleo sojera</span>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-2 mb-2">Ruta Nacional 11</span>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mr-2 mb-2">Puerto de Rosario</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Contáctenos</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">Estamos para responder sus consultas y asesorarlo sobre nuestros productos</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nombre" class="block text-gray-700 font-medium mb-2">Nombre</label>
+                                <input type="text" id="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label for="apellido" class="block text-gray-700 font-medium mb-2">Apellido</label>
+                                <input type="text" id="apellido" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="Tu apellido">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="empresa" class="block text-gray-700 font-medium mb-2">Empresa</label>
+                            <input type="text" id="empresa" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="Nombre de tu empresa">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="tu@email.com">
+                        </div>
+                        <div>
+                            <label for="telefono" class="block text-gray-700 font-medium mb-2">Teléfono</label>
+                            <input type="tel" id="telefono" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="+54 11 1234-5678">
+                        </div>
+                        <div>
+                            <label for="mensaje" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                            <textarea id="mensaje" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent" placeholder="Tu mensaje..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition">Enviar consulta</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <h3 class="text-2xl font-bold text-green-800 mb-6">Información de contacto</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-green-600 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Oficina Central</h4>
+                                    <p class="text-gray-600">Buenos Aires, Argentina</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-green-600 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Teléfono</h4>
+                                    <p class="text-gray-600">+54 11 4321-9876</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-green-600 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@empresavasquense.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-green-600 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Horario de atención</h4>
+                                    <p class="text-gray-600">Lunes a Viernes: 8:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-gray-800 mb-4">Síguenos</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-green-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Suscríbase a nuestro boletín</h3>
+                    <p class="text-green-200">Reciba información sobre nuevos productos, promociones especiales y noticias de la industria.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="Tu email" class="flex-grow px-4 py-3 rounded-lg focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition whitespace-nowrap">Suscribirme</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="logo.png" alt="Logo de hoja" class="h-8 w-8">
+                        <h3 class="text-xl font-bold">Empresa <span class="text-green-300">Vasquense</span></h3>
+                    </div>
+                    <p class="text-green-200 mb-4">Líderes en producción y comercialización de productos derivados de soja orgánica en Argentina.</p>
+                    <p class="text-green-300 text-sm">© 2025 Empresa Vasquense. Todos los derechos reservados.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Productos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Tofu Orgánico</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Leche de Soja Orgánica</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Salsa de Soja Orgánica</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Harina de Soja</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Aceite de Soja</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Empresa</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Historia</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Estancias</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Certificaciones</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Trabajá con nosotros</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Sostenibilidad</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Consultas comerciales</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Prensa</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Proveedores</a></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Distribuidores</span></li>
+                        <li><a href="#" class="text-green-200 hover:text-white transition">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-green-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-green-300 text-sm mb-4 md:mb-0">Empresa Vasquense - Comprometidos con la calidad desde 1991</p>
+                <div class="flex space-x-4">
+                    <i class="fab fa-facebook-f text-green-200 hover:text-white transition cursor-pointer"></i>
+                    <i class="fab fa-instagram text-green-200 hover:text-white transition cursor-pointer"></i>
+                    <i class="fab fa-linkedin-in text-green-200 hover:text-white transition cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-green-700 transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mobile Menu Toggle (placeholder functionality)
+        const mobileMenuButton = document.querySelector('header button');
+        mobileMenuButton.addEventListener('click', () => {
+            alert('Menú móvil se abriría aquí. Esta es una demostración.');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
